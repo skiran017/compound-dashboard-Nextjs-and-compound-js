@@ -1,6 +1,8 @@
 import Compound from '@compound-finance/compound-js';
 
-let provider = process.env.MAINNET_URL;
+// let provider = process.env.MAINNET_URL;
+const provider =
+  'https://mainnet.infura.io/v3/83022eef8b4a4d9a91e21c259f62d903';
 
 const comptroller = Compound.util.getAddress(Compound.Comptroller);
 //oracle price feed

@@ -1,8 +1,6 @@
 import Compound from '@compound-finance/compound-js';
-const fs = require('fs');
-const secrets = JSON.parse(fs.readFileSync('.secrets.json').toString().trim());
 
-const provider = secrets.mainnetUrl;
+let provider = process.env.MAINNET_URL;
 
 const comptroller = Compound.util.getAddress(Compound.Comptroller);
 //oracle price feed

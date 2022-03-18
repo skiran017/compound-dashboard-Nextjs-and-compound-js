@@ -1,7 +1,9 @@
 import Compound from '@compound-finance/compound-js';
+const fs = require('fs');
+const secrets = JSON.parse(fs.readFileSync('.secrets.json').toString().trim());
 
-const provider =
-  'https://mainnet.infura.io/v3/83022eef8b4a4d9a91e21c259f62d903';
+const provider = secrets.mainnetUrl;
+
 const comptroller = Compound.util.getAddress(Compound.Comptroller);
 //oracle price feed
 const opf = Compound.util.getAddress(Compound.PriceFeed);
